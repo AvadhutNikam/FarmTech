@@ -121,14 +121,3 @@ Contributions are welcome! If you'd like to contribute to this project, please f
 
 ---
 
-## 📧 Contact
-
-For any queries or feedback, feel free to reach out:
-
-- **Name**: Aaditya Mahajan  
-- **Email**: [mahajanaaditya50@gmail.com](mailto:mahajanaaditya50@gmail.com)  
-- **GitHub**: [AadityaMahajan03](https://github.com/AadityaMahajan03)  
-
----
-
-Made with ❤️ by **Aaditya Mahajan**. Happy Farming! 🌱
