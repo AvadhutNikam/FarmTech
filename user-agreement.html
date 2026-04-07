@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Agreement - FarmTech Rental System</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background: linear-gradient(135deg, #f5f7fa, #c3cfe2);
+            padding: 20px;
+        }
+
+        .agreement-container {
+            background: rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(10px);
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+            width: 90%;
+            max-width: 600px;
+            text-align: center;
+            animation: fadeIn 0.8s ease-in-out;
+            border: 2px solid rgba(255, 255, 255, 0.2);
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        h2 {
+            color: #333;
+            font-size: 28px;
+            font-weight: 600;
+            margin-bottom: 15px;
+        }
+
+        .language-selector {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+
+        select {
+            padding: 10px;
+            border-radius: 5px;
+            border: none;
+            cursor: pointer;
+            font-size: 14px;
+            background: rgba(255, 255, 255, 0.8);
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+            transition: 0.3s;
+        }
+
+        select:hover {
+            background: rgba(255, 255, 255, 1);
+        }
+
+        .agreement-text {
+            text-align: left;
+            height: 250px;
+            overflow-y: auto;
+            border-radius: 10px;
+            padding: 15px;
+            background: rgba(255, 255, 255, 0.8);
+            border-left: 5px solid #007bff;
+            box-shadow: inset 0px 0px 8px rgba(0, 0, 0, 0.1);
+            transition: opacity 0.3s ease-in-out;
+            color: #333;
+        }
+
+        .agreement-text ol {
+            padding-left: 20px;
+        }
+
+        .agreement-text ol li {
+            margin: 8px 0;
+            font-size: 14px;
+            color: #444;
+        }
+
+        .buttons {
+            margin-top: 20px;
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+        }
+
+        .btn {
+            background: linear-gradient(to right, #007bff, #00d4ff);
+            color: white;
+            padding: 12px 20px;
+            font-size: 16px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: 0.3s;
+            font-weight: 600;
+            box-shadow: 0px 4px 10px rgba(0, 123, 255, 0.3);
+        }
+
+        .btn:hover {
+            background: linear-gradient(to right, #0056b3, #0096c7);
+            transform: scale(1.05);
+        }
+
+        .btn-decline {
+            background: linear-gradient(to right, #dc3545, #ff0000);
+            box-shadow: 0px 4px 10px rgba(220, 53, 69, 0.3);
+        }
+
+        .btn-decline:hover {
+            background: linear-gradient(to right, #b02a37, #cc0000);
+        }
+    </style>
+    <script>
+        const agreementText = {
+            "en": `
+                <p>Please read the terms carefully before proceeding:</p>
+                <ol>
+                    <li>All rented farming equipment must be returned in the same condition as received.</li>
+                    <li>Rental charges are applicable on an hourly basis.</li>
+                    <li>Damages to equipment will be charged separately.</li>
+                    <li>Late returns will incur additional daily rental fees.</li>
+                    <li>Users are responsible for proper handling of rented equipment.</li>
+                    <li>The equipment should be used strictly for agricultural purposes.</li>
+                    <li>Users must inspect the equipment before renting and report any issues.</li>
+                    <li>FarmTech Rental System reserves the right to deny rentals to any user.</li>
+                    <li>An extra product price is taken as a deposit.</li>
+                    <li>After returning the equipment, the deposit amount will be refunded.</li>
+                    <li>Violation of terms may result in a permanent ban from rentals.</li>
+                </ol>
+            `,
+            "hi": `
+                <p>कृपया आगे बढ़ने से पहले नियमों को ध्यान से पढ़ें:</p>
+                <ol>
+                    <li>सभी किराए पर लिए गए कृषि उपकरण उसी स्थिति में लौटाने होंगे जैसे प्राप्त किए गए थे।</li>
+                    <li>किराया प्रति घंटे के आधार पर लागू होगा।</li>
+                    <li>उपकरण को हुए किसी भी नुकसान के लिए अतिरिक्त शुल्क लिया जाएगा।</li>
+                    <li>देर से लौटाने पर अतिरिक्त दैनिक किराया शुल्क लगेगा।</li>
+                    <li>उपयोगकर्ता किराए के उपकरणों को ठीक से संभालने के लिए जिम्मेदार होंगे।</li>
+                    <li>उपकरण का उपयोग केवल कृषि कार्यों के लिए किया जाना चाहिए।</li>
+                    <li>उपयोगकर्ता उपकरण किराए पर लेने से पहले निरीक्षण करें और किसी भी समस्या की रिपोर्ट करें।</li>
+                    <li>फार्मटेक किराया प्रणाली किसी भी उपयोगकर्ता को किराया देने से इनकार कर सकती है।</li>
+                    <li>अतिरिक्त उत्पाद मूल्य जमा राशि के रूप में लिया जाएगा।</li>
+                    <li>उपकरण वापस करने के बाद जमा राशि वापस कर दी जाएगी।</li>
+                    <li>नियमों का उल्लंघन करने पर भविष्य में किराए पर लेने से प्रतिबंधित किया जा सकता है।</li>
+                </ol>
+            `,
+            "mr": `
+                <p>कृपया पुढे जाण्यापूर्वी अटी काळजीपूर्वक वाचा:</p>
+                <ol>
+                    <li>भाड्याने घेतलेली सर्व शेती उपकरणे जशी मिळाली तशी परत करावीत.</li>
+                    <li>भाडे प्रति तास लागू होईल.</li>
+                    <li>उपकरणांच्या नुकसानासाठी वेगळा शुल्क आकारला जाईल.</li>
+                    <li>उशिरा परत केल्यास अतिरिक्त भाडे द्यावे लागेल.</li>
+                    <li>उपयोगकर्ता उपकरणांची काळजी घेण्यास जबाबदार आहे.</li>
+                    <li>उपकरणे केवळ शेतीसाठी वापरली पाहिजेत.</li>
+                    <li>उपयोगकर्त्याने भाड्याने घेतलेल्या उपकरणांचे पूर्वतपासणी करावी.</li>
+                    <li>फार्मटेक कंपनी कोणत्याही ग्राहकास भाड्याने सेवा नाकारू शकते.</li>
+                    <li>अतिरिक्त उत्पादन किंमत ठेव रक्कम म्हणून घेतली जाईल.</li>
+                    <li>उपकरण परत दिल्यानंतर ठेव रक्कम परत केली जाईल.</li>
+                    <li>अटींचे उल्लंघन केल्यास भविष्यात भाड्याने बंदी येऊ शकते.</li>
+                </ol>
+            `
+        };
+
+        function changeLanguage(lang) {
+            document.getElementById("agreement-content").innerHTML = agreementText[lang];
+        }
+
+        function acceptAgreement() {
+            alert("✅ Agreement Accepted! Redirecting...");
+            window.location.href = "index.php";
+        }
+
+        function declineAgreement() {
+            let confirmDecline = confirm("⚠ Are you sure you want to decline the agreement?");
+            if (confirmDecline) {
+                alert("You have declined the agreement.");
+                // No redirection happens here
+            }
+        }
+
+        window.onload = () => {
+            changeLanguage('en');
+        };
+    </script>
+</head>
+<body>
+    <div class="agreement-container">
+        <h2>FarmTech Rental System - User Agreement</h2>
+        <div class="language-selector">
+            <select onchange="changeLanguage(this.value)">
+                <option value="en">English</option>
+                <option value="hi">हिन्दी</option>
+                <option value="mr">मराठी</option>
+            </select>
+        </div>
+        <div id="agreement-content" class="agreement-text"></div>
+        <div class="buttons">
+            <button class="btn" onclick="acceptAgreement()">✅ Accept</button>
+            <button class="btn btn-decline" onclick="declineAgreement()">❌ Decline</button>
+        </div>
+    </div>
+</body>
+</html>

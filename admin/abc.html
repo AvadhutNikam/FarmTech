@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Agreement - FarmTech Rental System</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 50px;
+        }
+        .agreement-box {
+            border: 1px solid #ccc;
+            padding: 20px;
+            max-width: 600px;
+            margin: auto;
+            background-color: #f9f9f9;
+        }
+        .hidden {
+            display: none;
+        }
+    </style>
+    <script>
+        function acceptAgreement() {
+            document.getElementById('agreement').classList.add('hidden');
+            document.getElementById('website-content').classList.remove('hidden');
+        }
+    </script>
+</head>
+<body>
+    <div id="agreement" class="agreement-box">
+        <h2>User Agreement</h2>
+        <p>By using the FarmTech Rental System, you agree to the following terms and conditions...</p>
+        <p>(Include detailed terms here)</p>
+        <button onclick="acceptAgreement()">OK</button>
+    </div>
+    <div id="website-content" class="hidden">
+        <h1>Welcome to FarmTech Rental System</h1>
+        <p>The main website content goes here.</p>
+    </div>
+</body>
+</html>
